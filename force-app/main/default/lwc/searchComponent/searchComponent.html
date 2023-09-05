@@ -1,0 +1,41 @@
+<!--
+  @description       : 
+  @author            : wafulavictor@gmail.com
+  @group             : 
+  @last modified on  : 09-05-2023
+  @last modified by  : wafulavictor@gmail.com
+-->
+<template>
+    <lightning-card  variant="Narrow"  title="Holiday Search" icon-name="utility:record_lookup">
+        <div class="slds-m-around_medium">
+            <p>Search important public holidays using your South Africa ID Number.</p>
+        </div>
+        <div class="input-section">
+            <lightning-input
+                label="Enter ID Number"
+                type="number"
+                value={idNumber}
+                data-name="idNumber" 
+                onchange={handleIdChange}>
+            </lightning-input>
+           
+                <lightning-button
+                name="search" 
+                label="Search"
+                variant="brand"
+                onclick={handleSearch}
+                disabled={disableBtn}>
+            </lightning-button>
+            
+        </div>
+        <div class="slds-m-around_medium">
+            <p>{invalidId}</p>
+            <p>{searchResult}</p>
+        </div>
+        <div class="slds-m-around_medium">
+            <c-holiday-component year={year} country={country}></c-holiday-component>
+        </div>
+       
+
+    </lightning-card>
+</template>

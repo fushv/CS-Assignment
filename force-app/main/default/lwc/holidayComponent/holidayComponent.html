@@ -1,0 +1,25 @@
+<!--
+  @description       : 
+  @author            : wafulavictor@gmail.com
+  @group             : 
+  @last modified on  : 09-05-2023
+  @last modified by  : wafulavictor@gmail.com
+-->
+<template>
+    <lightning-card  variant="Narrow" >
+        <div class="slds-m-around_medium">
+          
+            <div class="slds-m-around_medium">
+                <ol class="slds-m-around_medium">
+                    <template for:each={holidayRecords} for:item="holiday">
+                        <li key = {holiday.date.iso}>
+                            <p></p>{holiday.date.iso}, {holiday.name}, {holiday.description}</p>
+                        </li>
+                    </template>
+                </ol>
+                
+            </div> 
+           
+        </div>
+    </lightning-card>
+</template>
